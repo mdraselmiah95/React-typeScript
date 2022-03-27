@@ -1,9 +1,19 @@
 import React from "react";
 
-const List = ({ items, onClick }: { items: string[]; onClick: () => void }) => {
+const List = ({
+  items,
+  onClick,
+}: {
+  items: string[];
+  onClick: (item: string) => void;
+}) => {
   return (
     <div>
-      <h2>This is a List.</h2>
+      {items.map((item, index) => {
+        <li key={index} onClick={() => onClick(item)}>
+          {item}
+        </li>;
+      })}
     </div>
   );
 };
