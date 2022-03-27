@@ -1,6 +1,10 @@
 import React, { useCallback, useReducer, useRef, useState } from "react";
 import "./App.css";
 import Lists from "./components/Lists";
+import Box from "@mui/material/Box";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
 
 // const Box: React.FunctionComponent<{ title: string }> = ({ title }) => {
 //   return <div></div>;
@@ -64,21 +68,48 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-      {/* <Box title="hello"></Box>
+    <>
+      <div className="App">
+        {/* <Box title="hello"></Box>
       <Lists /> */}
+        <Box sx={{ mt: "4rem", width: "75%", mx: "auto" }}>
+          <TextField
+            variant="outlined"
+            label="Your Name"
+            type="text"
+            // value={}
+            inputRef={newTodoRef}
+            fullWidth
+          />
+          <Button
+            color="success"
+            variant="contained"
+            sx={{ px: "3rem", py: "1rem", mt: "12px" }}
+            onClick={onAddTodo}
+          >
+            Add
+          </Button>
+          {todos.map((todo) => (
+            <Box key={todo.id} sx={{ mt: "3rem", display: "flex" }}>
+              <Typography
+                variant="h3"
+                color="secondary"
+                sx={{ mr: "1rem", fontWeight: 500 }}
+              >
+                {todo.text}
+              </Typography>
 
-      <input type="text" ref={newTodoRef} />
-      <button onClick={onAddTodo}>Add</button>
-      {todos.map((todo) => (
-        <div key={todo.id}>
-          {todo.text}
-          <button onClick={() => dispatch({ type: "REMOVE", id: todo.id })}>
-            Remove
-          </button>
-        </div>
-      ))}
-    </div>
+              <Button
+                variant="outlined"
+                onClick={() => dispatch({ type: "REMOVE", id: todo.id })}
+              >
+                Remove
+              </Button>
+            </Box>
+          ))}
+        </Box>
+      </div>
+    </>
   );
 }
 
