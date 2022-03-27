@@ -49,8 +49,6 @@ function App() {
   return (
     <>
       <div className="App">
-        {/* <Box title="hello"></Box>
-      <Lists /> */}
         <Box sx={{ mt: "4rem", width: "75%", mx: "auto" }}>
           <TextField
             variant="outlined"
