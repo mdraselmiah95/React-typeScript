@@ -6,9 +6,6 @@ import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 
-// const Box: React.FunctionComponent<{ title: string }> = ({ title }) => {
-//   return <div></div>;
-// };
 interface Todo {
   id: number;
   text: string;
