@@ -47,11 +47,11 @@ function App() {
   }, []);
 
   return (
-    <div>
+    <div className="App">
       {/* <Box title="hello"></Box>
       <Lists /> */}
 
-      <input type="text" name="" id="" ref={newTodoRef} />
+      <input type="text" ref={newTodoRef} />
       <button onClick={onAddTodo}>Add</button>
       {todos.map((todo) => {
         <div key={todo.id}>{todo.text}</div>;
