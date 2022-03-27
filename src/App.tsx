@@ -1,4 +1,10 @@
-import React, { useCallback, useReducer, useRef } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useReducer,
+  useRef,
+  useState,
+} from "react";
 import "./App.css";
 import Lists from "./components/Lists";
 
@@ -15,8 +21,27 @@ type ActionType =
   | { type: "REMOVE"; id: number };
 
 function App() {
+  const [myState, setMyState] = useState<Todo>();
+
+  useEffect(() => {}, []);
+
   //useReducer
-  function reducer(state: Todo[], action: ActionType) {
+  // function reducer(state: Todo[], action: ActionType) {
+  //   switch (action.type) {
+  //     case "ADD":
+  //       return [
+  //         ...state,
+  //         {
+  //           id: state.length,
+  //           text: action.text,
+  //         },
+  //       ];
+  //     case "REMOVE":
+  //       return state.filter(({ id }) => id !== action.id);
+  //   }
+  // }
+
+  const [todos, dispatch] = useReducer((state: Todo[], action: ActionType) => {
     switch (action.type) {
       case "ADD":
         return [
@@ -29,9 +54,7 @@ function App() {
       case "REMOVE":
         return state.filter(({ id }) => id !== action.id);
     }
-  }
-
-  const [todos, dispatch] = useReducer(reducer, []);
+  }, []);
 
   const newTodoRef = useRef<HTMLInputElement>(null);
 
