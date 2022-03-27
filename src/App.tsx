@@ -1,10 +1,16 @@
 import React from "react";
 import "./App.css";
+import Lists from "./components/Lists";
+
+const Box: React.FunctionComponent = ({ children }) => {
+  return <div>{children}</div>;
+};
 
 function App() {
   return (
     <div>
-      <h2>Hi this is Rasel.</h2>
+      <Box></Box>
+      <Lists />
     </div>
   );
 }
