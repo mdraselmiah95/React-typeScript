@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useRef } from "react";
 import "./App.css";
 import Lists from "./components/Lists";
 
@@ -33,11 +33,17 @@ function App() {
 
   const [todos, dispatch] = useReducer(reducer, []);
 
+  const newTodoRef = useRef<HTMLInputElement>(null);
+
   return (
     <div>
       {/* <Box title="hello"></Box>
       <Lists /> */}
-      <h2>h1</h2>
+
+      <input type="text" name="" id="" ref={newTodoRef} />
+      {todos.map((todo) => {
+        <div key={todo.id}>{todo.text}</div>;
+      })}
     </div>
   );
 }
