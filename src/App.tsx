@@ -18,24 +18,6 @@ type ActionType =
 function App() {
   const [myState, setMyState] = useState<Todo>();
 
-  // useEffect(() => {}, []);
-
-  //useReducer
-  // function reducer(state: Todo[], action: ActionType) {
-  //   switch (action.type) {
-  //     case "ADD":
-  //       return [
-  //         ...state,
-  //         {
-  //           id: state.length,
-  //           text: action.text,
-  //         },
-  //       ];
-  //     case "REMOVE":
-  //       return state.filter(({ id }) => id !== action.id);
-  //   }
-  // }
-
   const [todos, dispatch] = useReducer((state: Todo[], action: ActionType) => {
     switch (action.type) {
       case "ADD":
