@@ -1,4 +1,4 @@
-import React, { useReducer, useRef } from "react";
+import React, { useCallback, useReducer, useRef } from "react";
 import "./App.css";
 import Lists from "./components/Lists";
 
@@ -35,12 +35,24 @@ function App() {
 
   const newTodoRef = useRef<HTMLInputElement>(null);
 
+  //useCallBack
+  const onAddTodo = useCallback(() => {
+    if (newTodoRef.current) {
+      dispatch({
+        type: "ADD",
+        text: newTodoRef.current.value,
+      });
+      newTodoRef.current.value = "";
+    }
+  }, []);
+
   return (
     <div>
       {/* <Box title="hello"></Box>
       <Lists /> */}
 
       <input type="text" name="" id="" ref={newTodoRef} />
+      <button onClick={onAddTodo}>Add</button>
       {todos.map((todo) => {
         <div key={todo.id}>{todo.text}</div>;
       })}
