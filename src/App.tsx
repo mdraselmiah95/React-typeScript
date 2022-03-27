@@ -1,10 +1,4 @@
-import React, {
-  useCallback,
-  useEffect,
-  useReducer,
-  useRef,
-  useState,
-} from "react";
+import React, { useCallback, useReducer, useRef, useState } from "react";
 import "./App.css";
 import Lists from "./components/Lists";
 
@@ -23,7 +17,7 @@ type ActionType =
 function App() {
   const [myState, setMyState] = useState<Todo>();
 
-  useEffect(() => {}, []);
+  // useEffect(() => {}, []);
 
   //useReducer
   // function reducer(state: Todo[], action: ActionType) {
