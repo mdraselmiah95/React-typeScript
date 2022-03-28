@@ -9,6 +9,7 @@ const List = ({
 }) => {
   return (
     <div>
+      {/* mapping  */}
       {items.map((item, index) => {
         <li key={index} onClick={() => onClick(item)}>
           {item}
