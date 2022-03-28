@@ -1,6 +1,5 @@
 import React, { useCallback, useReducer, useRef, useState } from "react";
 import "./App.css";
-import Lists from "./components/Lists";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
@@ -16,7 +15,7 @@ type ActionType =
   | { type: "REMOVE"; id: number };
 
 function App() {
-  const [myState, setMyState] = useState<Todo>();
+  // const [myState, setMyState] = useState<Todo>();
 
   const [todos, dispatch] = useReducer((state: Todo[], action: ActionType) => {
     switch (action.type) {
