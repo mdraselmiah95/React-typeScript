@@ -1,6 +1,8 @@
-import { type } from "os";
 import React from "react";
 import { Todo } from "../../model";
+import { AiFillDelete, AiFillEdit } from "react-icons/ai";
+import { MdDone } from "react-icons/md";
+import "./InputField.css";
 
 type Props = {
   todo: Todo;
@@ -10,9 +12,20 @@ type Props = {
 
 const SIngleTodo = ({ todo, todos, setTodos }: Props) => {
   return (
-    <div>
-      <h2></h2>
-    </div>
+    <form className="todos__single">
+      <span className="todos__single--text">{todo.todo}</span>
+      <div>
+        <span className="icon">
+          <AiFillEdit />
+        </span>
+        <span className="icon">
+          <AiFillDelete />
+        </span>
+        <span className="icon">
+          <MdDone />
+        </span>
+      </div>
+    </form>
   );
 };
 
