@@ -16,10 +16,15 @@ const App: React.FC = () => {
     }
   };
 
+  console.log(todos);
   return (
     <div className="App">
       <span className="heading">Cool-Todo</span>
       <InputField todo={todo} setTodo={setTodo} handleAdd={handleAdd} />
+
+      {todos.map((data) => (
+        <li>{data.todo}</li>
+      ))}
     </div>
   );
 };
