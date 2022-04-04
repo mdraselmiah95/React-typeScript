@@ -46,6 +46,9 @@ const App: React.FC = () => {
     } else {
       complete.splice(destination.index, 0, add);
     }
+
+    setCompletedTodos(complete);
+    setTodos(active);
   };
 
   // console.log(todos);
