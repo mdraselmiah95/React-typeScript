@@ -50,6 +50,9 @@ const SIngleTodo = ({ index, todo, todos, setTodos }: Props) => {
         <form
           className="todos__single"
           onSubmit={(e) => handleEdit(e, todo.id)}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          ref={provided.innerRef}
         >
           {edit ? (
             <input
